@@ -28,7 +28,7 @@ class NetworkManager {
     void DEBUG_NM(String msg);
 
     bool _debug = true;
-    bool _ota;
+    bool _ota = true;
 };
 
 extern NetworkManager Network;
