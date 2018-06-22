@@ -1,1 +1,1 @@
-# NetworkManager
+# NetworkManager [![Build Status](https://travis-ci.org/rpidanny/NetworkManager.svg?branch=master)](https://travis-ci.org/rpidanny/NetworkManager)
