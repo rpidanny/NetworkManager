@@ -1,5 +1,9 @@
 #include "OTAManager.h"
 
+OTAManager::OTAManager() {
+
+}
+
 void OTAManager::DEBUG_OTA(String msg) {
   if (_debug) {
     Serial.print("*OTA: ");

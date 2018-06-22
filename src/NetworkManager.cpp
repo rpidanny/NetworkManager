@@ -1,5 +1,9 @@
 #include "NetworkManager.h"
 
+NetworkManager::NetworkManager() {
+
+}
+
 void NetworkManager::DEBUG_NM(String msg) {
   if (_debug) {
     Serial.print("*NM: ");
@@ -13,14 +17,21 @@ void NetworkManager::begin() {
   if (!wifiManager.autoConnect()) {
     DEBUG_NM("Failed to connect..");
     ESP.reset();
-    delay(_delay);
+    delay(WIFI_RECONNECT_TIME);
   }
   DEBUG_NM("Connected to " + WiFi.SSID());
-  Ota.begin();
+  // Initialize OTA Service
+  if (_ota)
+    Ota.begin();
 }
 
 void NetworkManager::handle() {
-  Ota.handle();
+  if (_ota)
+    Ota.handle();
+}
+
+void NetworkManager::ota(bool flag) {
+  _ota = flag;
 }
 
 NetworkManager Network;

@@ -7,8 +7,8 @@
   #define DEBUG_MSG(...)
 #endif
 
-#ifndef OTAMANAGER_H
-  #include "OTAManager.h"
+#ifndef WIFI_RECONNECT_TIME
+  #define WIFI_RECONNECT_TIME 3000
 #endif
 
 #include <ESP8266WiFi.h>          //ESP8266 Core WiFi Library (you most likely already have this in your sketch)
@@ -16,15 +16,19 @@
 #include <ESP8266WebServer.h>     //Local WebServer used to serve the configuration portal
 #include <WiFiManager.h>          //https://github.com/tzapu/WiFiManager WiFi Configuration Magic
 
+#include "OTAManager.h"
+
 class NetworkManager {
   public:
+    NetworkManager();
     void begin();
     void handle();
+    void ota(bool flag = true);
   private:
     void DEBUG_NM(String msg);
 
     bool _debug = true;
-    uint16_t _delay = 3000;
+    bool _ota;;
 };
 
 extern NetworkManager Network;
