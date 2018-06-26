@@ -11,3 +11,7 @@ The example can be used as a boilerplate for ESP8266 projects.
 - [ ] OTAManager
   - [x] Listen for OTA updates
   - [ ] Auto fetch new updates from URL
+
+## License
+
+This project is licensed under the MIT License - see the [license file](LICENSE) file for details
