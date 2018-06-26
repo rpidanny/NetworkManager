@@ -2,10 +2,10 @@
 A simple library that encapsulates all networking tasks (WiFi, OTA, mDNS) of ESP8266 into a simple and clean easy to use package.
 The example can be used as a boilerplate for ESP8266 projects.
 
-# Dependencies
+## Dependencies
 - [WifiManager](https://github.com/tzapu/WiFiManager)
 
-# Wishlist
+## Wishlist
 - [x] WiFi
 - [ ] mDNS
 - [ ] OTAManager
