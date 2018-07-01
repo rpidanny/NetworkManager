@@ -7,7 +7,7 @@ The example can be used as a boilerplate for ESP8266 projects.
 
 ## Wishlist
 - [x] WiFi
-- [ ] mDNS
+- [x] mDNS
 - [ ] OTAManager
   - [x] Listen for OTA updates
   - [ ] Auto fetch new updates from URL
