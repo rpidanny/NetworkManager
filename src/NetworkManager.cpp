@@ -1,7 +1,7 @@
 #include "NetworkManager.h"
 
 NetworkManager::NetworkManager() {
-
+  _hostname = "ESP_" + ESP.getChipId();
 }
 
 void NetworkManager::DEBUG_NM(String msg) {
@@ -20,6 +20,13 @@ void NetworkManager::begin() {
     delay(WIFI_RECONNECT_TIME);
   }
   DEBUG_NM("Connected to " + WiFi.SSID());
+
+  // setup mDNS
+  WiFi.hostname(_hostname.c_str());
+  if (!MDNS.begin(_hostname.c_str())) {
+    DEBUG_NM("Error setting up mDNS responder.");
+  }
+
   // Initialize OTA Service
   if (_ota)
     Ota.begin();
